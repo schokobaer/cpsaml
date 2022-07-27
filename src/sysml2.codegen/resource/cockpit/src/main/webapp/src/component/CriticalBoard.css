@@ -1,0 +1,28 @@
+.criticalboard-ct {
+    border-radius: 3px;
+    border: black solid 2px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+
+.criticalboard-header {
+    background-color: black;
+    color: white;
+    padding: 3px 7px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.criticalboard {
+    overflow-y: auto;
+}
+
+.criticalboard > div {
+    display: flex;
+}
+
+.logconsole > div > div:first-child {
+    width: 40px;
+}

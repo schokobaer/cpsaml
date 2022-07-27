@@ -1,0 +1,67 @@
+.dashboard-page {
+    width: 100%;
+    position: absolute;
+    top: 68px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+
+.dashboard-select-ct {
+    padding: 0px 15px 10px 15px;
+    border-bottom: 2px dashed #aaaaaa;
+}
+
+.dashboard-select-ct > span {
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.dashboard-select-ct > div {
+    width: 300px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.dashboard-select-ct > img {
+    height: 24px;
+    width: 24px;
+    margin-left: 15px;
+    cursor: pointer;
+
+}
+
+.monitor-ct {
+    height: 100%;
+    display: flex;
+    padding: 0px 10px;
+}
+
+.monitor-ct > div {
+    width: 100%;
+    margin: 10px;
+    border-radius: 5px;
+    border: #333 solid 2px;
+    box-shadow: 0px 0px 10px;
+}
+
+.monitor-ct > div > div:first-child {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: #333 solid 2px;
+    padding: 2px 5px;
+}
+
+.monitor-ct > div:first-child > div:first-child {
+    background-color: #4472C4;
+}
+
+.monitor-ct > div:last-child > div:first-child {
+    background-color: #ED7D31;
+}
+
+.monitor-values-ct {
+    padding: 5px;
+}

@@ -1,0 +1,16 @@
+org\example\cpscockpit\annotation\MonitorProvider.class
+org\example\cpscockpit\processor\EventProcessor.class
+org\example\cpscockpit\processor\SeverityProcessor.class
+org\example\cpscockpit\annotation\Id.class
+org\example\cpscockpit\annotation\CriticalMonitor.class
+org\example\cpscockpit\annotation\Bounds.class
+org\example\cpscockpit\processor\CriticalMonitorProcessor.class
+org\example\cpscockpit\annotation\Event.class
+org\example\cpscockpit\model\SeverityLevel.class
+org\example\cpscockpit\util\TypeMirrorUtils.class
+org\example\cpscockpit\processor\IdProcessor.class
+org\example\cpscockpit\processor\BoundsProcessor.class
+org\example\cpscockpit\processor\PropertyMonitorProcessor.class
+META-INF\services\javax.annotation.processing.Processor
+org\example\cpscockpit\annotation\Severity.class
+org\example\cpscockpit\annotation\PropertyMonitor.class

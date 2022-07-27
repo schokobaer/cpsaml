@@ -1,0 +1,38 @@
+.actionedit-page {
+    width: 100%;
+    padding: 10px 15px;
+}
+
+.service-select-ct > div {
+    width: 300px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.actionedit-page > div {
+    margin-top: 10px;
+}
+
+.parammapping-ct {
+    display: flex;
+    padding: 5px;
+    width: 830px;
+}
+
+.parammapping-ct:first-of-type {
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
+
+.parammapping-ct:nth-child(3) {
+    background-color: #cccccc;
+}
+
+.parammapping-ct > div {
+    width: 250px;
+}
+
+.parammapping-ct > div:first-child {
+    width: 60px;
+    text-align: center;
+}

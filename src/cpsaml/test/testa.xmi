@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<socpsml:CpsSystem
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:socpsml="http://big.tuwien.ac.at/cps/socpsml"
+    xsi:schemaLocation="http://big.tuwien.ac.at/cps/socpsml ../model/socpsml.ecore"
+    name="Testa">
+  <commands
+      name="Command1">
+    <parameters
+        name="Para1"/>
+  </commands>
+  <commands
+      name="Command1">
+    <parameters
+        name="Para1"/>
+  </commands>
+  <cps name="CpsA">
+    <instances>Hans</instances>
+    <instances>Bert</instances>
+  </cps>
+  <cps name="Hans1">
+    <instances>A</instances>
+  </cps>
+</socpsml:CpsSystem>

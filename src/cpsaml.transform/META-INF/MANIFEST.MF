@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: cpsaml.transform
+Bundle-SymbolicName: cpsaml.transform
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: cpsaml.transform
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.22.0",
+ org.eclipse.xtend.lib.macro;bundle-version="2.22.0",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.16.0",
+ cpsaml;bundle-version="0.1.0",
+ cpsaml.xtext;bundle-version="1.0.0"

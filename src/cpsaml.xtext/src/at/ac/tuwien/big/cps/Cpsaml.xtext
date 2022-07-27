@@ -1,0 +1,150 @@
+grammar at.ac.tuwien.big.cps.Cpsaml hidden(WS, SL_COMMENT, ML_COMMENT)
+
+import "http://big.tuwien.ac.at/cps/cpsaml" 
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+CpsSystem returns CpsSystem:
+	TopDescSystem | InlineDescSystem
+;
+
+TopDescSystem returns CpsSystem:
+	{CpsSystem}
+	description=ML_DESCRIPTION
+	'cps-system'
+	name=Name
+	':'
+	(cps+=Cps | commands+=Command)*
+;
+
+InlineDescSystem returns CpsSystem:
+	{CpsSystem}
+	'cps-system'
+	name=Name
+	':'
+	(description=SL_DESCRIPTION)?
+	
+	(cps+=Cps | commands+=Command)*
+;
+
+Command returns Command:
+	TopDescCommand | InlineDescCommand
+;
+
+TopDescCommand returns Command:
+	{Command}
+	(description=ML_DESCRIPTION)?
+	'command'
+	name=Name
+;
+
+InlineDescCommand returns Command:
+	{Command}
+	'command'
+	name=Name
+	description=SL_DESCRIPTION
+;
+
+
+Resource returns Resource:
+	TopDescResource | InlineDescResource
+;
+
+TopDescResource returns Resource:
+	{Resource}
+	description=ML_DESCRIPTION
+	'produces'
+	name=Name
+;
+
+InlineDescResource returns Resource:
+	{Resource}
+	'produces'
+	name=Name
+	(description=SL_DESCRIPTION)?
+;
+
+
+Cps returns Cps:
+	SingletonCps | MultiCps
+;
+
+SingletonCps returns SingletonCps:
+	{SingletonCps}
+	(description=ML_DESCRIPTION)?
+	'cps-singleton'
+	name=Name
+	'{'
+		(commands+=Command | resources+=Resource | hardware+=Hardware)*
+	'}'
+;
+
+MultiCps returns MultiCps:
+	{MultiCps}
+	(description=ML_DESCRIPTION)?
+	'cps'
+	name=Name
+	('instances' instances+=Name (',' instances+=Name)*)?
+	'{'
+		(commands+=Command | resources+=Resource | hardware+=Hardware)*
+	'}'
+;
+
+Hardware returns Hardware:
+	Actuator | Sensor
+;
+
+Actuator returns Actuator:
+	{Actuator}
+	(description=ML_DESCRIPTION)?
+	'actuator'
+	name=Name
+	('instances' instances+=Name (',' instances+=Name)*)?
+	'{'
+		(commands+=Command)*
+	'}'
+;
+
+
+Sensor returns Sensor:
+	{Sensor}
+	(description=ML_DESCRIPTION)?
+	'sensor'
+	name=Name
+	('instances' instances+=Name (',' instances+=Name)*)?
+	'{'
+		(resources+=Resource)*
+	'}'
+;
+
+
+
+Name returns ecore::EString:
+	STRING | ID;
+
+
+
+
+
+
+
+
+
+
+
+/* MYTERMINALS */
+terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal STRING:
+			"'" ( '\\' . /* 'b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\' */ | !('\\'|"'") )* "'"
+		;
+
+terminal ML_COMMENT : '***' -> '***';
+terminal SL_COMMENT: '#' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal ML_DESCRIPTION : '/*' -> '*/';
+terminal SL_DESCRIPTION : '--' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS         : (' '|'\t'|'\r'|'\n')+;
+
+terminal ANY_OTHER: .;
+	
+	

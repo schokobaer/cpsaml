@@ -1,0 +1,32 @@
+.dashboard-instance-ct {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.dashboard-instance-ct > div {
+    width: 100%;
+    margin: 10px;
+    overflow-y: auto;
+}
+
+.dashboard-instance-ct .action-ct {
+
+}
+
+.instance-header {
+    margin-top: -48px;
+    margin-left: 500px;
+}
+
+.instance-header h4 {
+    display: inline-block;
+}
+
+.instance-header button {
+    margin-left: 15px;
+}

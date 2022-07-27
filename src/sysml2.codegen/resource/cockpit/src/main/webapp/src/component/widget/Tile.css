@@ -1,0 +1,70 @@
+.tile {
+    width: 100px;
+    height: 100px;
+    background-color: #005cbf;
+    color: white;
+    box-shadow: 0px 0px 5px #555555;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+}
+
+.tile-head {
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+}
+
+.tile-title {
+    width: 100%;
+}
+
+.tile-delete {
+    cursor: pointer;
+    text-align: right;
+}
+.tile-delete:hover {
+    text-decoration: underline;
+}
+
+.tile-body {
+    font-size: 20px;
+}
+
+.tile-clickable {
+    transition: 0.5s;
+}
+
+.tile-clickable:hover {
+    box-shadow: 0px 0px 10px #0056b3;
+}
+
+.tile-clickable .tile-body {
+    cursor: pointer;
+}
+
+.tile progress {
+    width: 180px;
+}
+
+progress {
+    color: lightyellow;
+    background-color: darkmagenta;
+}
+
+progress::-webkit-progress-value {
+    background: deeppink;
+}
+
+progress::-moz-progress-bar {
+    background: lightgreen;
+}
+
+progress::-webkit-progress-value {
+    background: red;
+}
+
+progress::-webkit-progress-bar {
+    background: black;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE ecore:EPackage [
+<!ENTITY _0 "http://www.eclipse.org/emf/2002/Ecore">
+]>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cpsaml" nsURI="http://big.tuwien.ac.at/cps/cpsaml" nsPrefix="cpsaml">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="DescribedNamedElement" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="notEmpty"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="notEmpty" value="name &lt;> null and name &lt;> '' and not name->exists(c|c='\n' or c='\r')"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType &_0;#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType &_0;#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActingElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="commands" upperBound="-1"
+        eType="#//Command" containment="true" eKeys="#//DescribedNamedElement/name"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Command" eSuperTypes="#//DescribedNamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CpsSystem" eSuperTypes="#//ActingElement #//DescribedNamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="distinctCpsNames"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="distinctCpsNames" value="cps->forAll(c1, c2| c1&lt;>c2 and c1.oclIsKindOf(MultiCps) implies c1.oclAsType(MultiCps).instances->forAll(i1|i1 &lt;> c2.name and c2.oclIsKindOf(MultiCps) implies c2.oclAsType(MultiCps).instances->forAll(i2|i1&lt;>i2)))"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cps" upperBound="-1" eType="#//Cps"
+        containment="true" eKeys="#//DescribedNamedElement/name"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cps" abstract="true" eSuperTypes="#//DescribedNamedElement #//ActingElement #//ProducingElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hardware" upperBound="-1"
+        eType="#//Hardware" containment="true" eKeys="#//DescribedNamedElement/name"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//DescribedNamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SpecificInstancesElement" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="notEmpty"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="notEmpty" value="instances->forAll(i | i &lt;> null and i &lt;> '' and not i->exists(c|c='\n' or c='\r'))"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instances" upperBound="-1"
+        eType="ecore:EDataType &_0;#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hardware" abstract="true" eSuperTypes="#//SpecificInstancesElement #//DescribedNamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ProducingElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+        eType="#//Resource" containment="true" eKeys="#//DescribedNamedElement/name"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actuator" eSuperTypes="#//Hardware #//ActingElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Hardware #//ProducingElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SingletonCps" eSuperTypes="#//Cps"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiCps" eSuperTypes="#//Cps #//SpecificInstancesElement"/>
+</ecore:EPackage>

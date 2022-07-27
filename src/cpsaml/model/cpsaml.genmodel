@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/cpsaml/src" modelPluginID="cpsaml" modelName="Cpsaml"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>cpsaml.ecore</foreignModel>
+  <genPackages prefix="Cpsaml" disposableProviderFactory="true" ecorePackage="cpsaml.ecore#/">
+    <genClasses image="false" ecoreClass="cpsaml.ecore#//DescribedNamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cpsaml.ecore#//DescribedNamedElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cpsaml.ecore#//DescribedNamedElement/description"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cpsaml.ecore#//ActingElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cpsaml.ecore#//ActingElement/commands"/>
+    </genClasses>
+    <genClasses ecoreClass="cpsaml.ecore#//Command"/>
+    <genClasses ecoreClass="cpsaml.ecore#//CpsSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cpsaml.ecore#//CpsSystem/cps"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cpsaml.ecore#//Cps">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cpsaml.ecore#//Cps/hardware"/>
+    </genClasses>
+    <genClasses ecoreClass="cpsaml.ecore#//Resource"/>
+    <genClasses image="false" ecoreClass="cpsaml.ecore#//SpecificInstancesElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cpsaml.ecore#//SpecificInstancesElement/instances"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cpsaml.ecore#//Hardware"/>
+    <genClasses image="false" ecoreClass="cpsaml.ecore#//ProducingElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cpsaml.ecore#//ProducingElement/resources"/>
+    </genClasses>
+    <genClasses ecoreClass="cpsaml.ecore#//Actuator"/>
+    <genClasses ecoreClass="cpsaml.ecore#//Sensor"/>
+    <genClasses ecoreClass="cpsaml.ecore#//SingletonCps"/>
+    <genClasses ecoreClass="cpsaml.ecore#//MultiCps"/>
+  </genPackages>
+</genmodel:GenModel>

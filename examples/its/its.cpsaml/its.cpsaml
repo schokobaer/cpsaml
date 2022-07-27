@@ -1,0 +1,67 @@
+/*
+ * Indoor Transport System
+ * 
+ * CPS system for transporting little objects within
+ * a building using mobile roombas.
+ */
+cps-system ITS:
+
+/*
+ * To request an arbitrary idle roomba to
+ * a specific place.
+ */
+command Request
+
+
+cps Roomba {
+	
+	***
+	Manual Driving
+	***
+	command Drive
+	command Turn
+	command Stop // stops all current activites
+	
+	***
+	Tasks Driving
+	***
+	/*
+	 * Adds a task to execute on a stack
+	 */
+	command Stack
+	command Start // Starts executing the stack
+	command Clear // Clears the Stack
+	
+	***
+	Autonomous Driving
+	***
+	/*
+	 * Drives the roomba to its docking station
+	 * for loading the battery.
+	 */
+	command Dock
+	command Navigate
+	
+	sensor Battery {
+		/*
+		 * The amount of energy
+		 */
+		produces energy
+		produces docked // flag if the roomba is in its docking station and the battery gets loaded
+	}
+	
+	sensor Bumper {
+		produces pushed
+	}
+	
+	actuator Wheel
+	  instances leftWheel, rightWheel {
+		command Drive
+		command Stop
+	}
+	
+	actuator Speaker {
+		command 'Play Song'
+	}
+	
+}

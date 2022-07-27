@@ -1,0 +1,50 @@
+.listitem {
+    background-color: #005cbf;
+    color: white;
+    box-shadow: 0px 0px 5px #555555;
+    display: inline-block;
+    margin: 0px 5px 5px 5px;
+    padding: 5px;
+    width: 400px;
+}
+
+.listitem-head {
+    display: flex;
+    justify-content: space-between;
+    margin-right: -9px;
+    margin-top: -9px;
+    font-size: 9px;
+}
+
+.listitem-delete {
+    background-color: black;
+    width: 16px;
+    height: 16px;
+    color: white;
+    border-radius: 8px;
+    display: inline-flex;
+    justify-content: space-around;
+    cursor: pointer;
+    box-shadow: 0px 0px 3px black;
+    transition: 0.4s;
+}
+.listitem-delete:hover {
+    box-shadow: 0px 0px 7px black;
+}
+
+.listitem-body {
+    margin-top: -10px;
+    font-size: 18px;
+}
+
+.listitem-clickable {
+    transition: 0.5s;
+}
+
+.listitem-clickable:hover {
+    box-shadow: 0px 0px 10px #0056b3;
+}
+
+.listitem-clickable .listitem-body {
+    cursor: pointer;
+}

@@ -1,0 +1,28 @@
+.property-source-ct {
+    background-color: #ccc;
+    margin: 10px -10px;
+    padding: 5px 10px;
+}
+
+.severity-table tr {
+    padding: 5px;
+}
+
+.severity-table tr td:first-of-type {
+    width: 30px;
+    text-align: center;
+}
+
+.severity-table tr td:nth-child(2) {
+    width: 100px;
+    padding-left: 5px;
+}
+
+.severity-table tr td:nth-child(3) {
+    padding: 5px;
+}
+
+.severity-table select {
+    width: 100px;
+    margin-right: 10px;
+}

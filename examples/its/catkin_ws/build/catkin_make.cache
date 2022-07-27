@@ -1,0 +1,2 @@
+rumotius
+-DCATKIN_DEVEL_PREFIX=/tmp/devel -DCMAKE_INSTALL_PREFIX=/tmp/install -G Unix Makefiles

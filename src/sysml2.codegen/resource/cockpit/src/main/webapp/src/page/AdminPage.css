@@ -1,0 +1,40 @@
+.admin-page {
+    margin-top: 10px;
+}
+
+
+.admin-select-ct {
+    padding: 0px 15px 10px 0px;
+    border-bottom: 2px dashed #aaaaaa;
+}
+
+.admin-select-ct > span {
+    font-weight: bold;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.admin-select-button-ct > span {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.admin-select-ct > div {
+    width: 300px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.admin-notification-ct {
+    margin: 10px 5px;
+}
+
+.admin-notification-ct > span {
+    margin-right: 15px;
+}
+
+.admin-list-ct {
+    display: flex;
+    flex-direction: column;
+}

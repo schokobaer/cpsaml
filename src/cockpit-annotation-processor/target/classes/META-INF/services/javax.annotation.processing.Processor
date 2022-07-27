@@ -1,0 +1,6 @@
+org.example.cpscockpit.processor.BoundsProcessor
+org.example.cpscockpit.processor.CriticalMonitorProcessor
+org.example.cpscockpit.processor.EventProcessor
+org.example.cpscockpit.processor.IdProcessor
+org.example.cpscockpit.processor.PropertyMonitorProcessor
+org.example.cpscockpit.processor.SeverityProcessor

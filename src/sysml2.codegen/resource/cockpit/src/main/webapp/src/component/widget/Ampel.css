@@ -1,0 +1,40 @@
+.ampel {
+    background-color: white;
+    border: 3px solid black;
+    display: flex;
+    justify-content: space-around;
+    display: inline-flex;
+}
+
+.ampel-vertical {
+    height: 50px;
+    width: 30px;;
+    flex-direction: column;
+    padding: 0px 7px;
+}
+
+.ampel-horizontal {
+    height: 30px;
+    width: 50px;;
+    flex-direction: row;
+    padding: 7px 0px;
+}
+
+.ampel > div {
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    border: solid 2px black;
+}
+
+.ampel-red {
+    background-color: red;
+}
+
+.ampel-orange {
+    background-color: darkorange;
+}
+
+.ampel-green {
+    background-color: green;
+}

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: cpsaml.xtext
+Bundle-ManifestVersion: 2
+Bundle-Name: cpsaml.xtext
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: cpsaml.xtext; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: cpsaml,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: at.ac.tuwien.big.cps.parser.antlr.internal,
+ at.ac.tuwien.big.cps.parser.antlr,
+ at.ac.tuwien.big.cps.scoping,
+ at.ac.tuwien.big.cps.formatting2,
+ at.ac.tuwien.big.cps.serializer,
+ at.ac.tuwien.big.cps.generator,
+ at.ac.tuwien.big.cps,
+ at.ac.tuwien.big.cps.services,
+ at.ac.tuwien.big.cps.validation
+Import-Package: org.apache.log4j

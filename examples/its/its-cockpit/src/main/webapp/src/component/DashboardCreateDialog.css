@@ -1,0 +1,20 @@
+.dashboard-create-ct {
+    margin: 10px;
+}
+
+.dashboard-create-ct > div {
+    margin-bottom: 10px;
+}
+
+.dashboard-create-ct > div > span {
+    width: 100px;
+    display: inline-block;
+}
+
+.dashboard-create-ct > div > input {
+    margin-right: 5px;
+}
+
+.dashboard-create-button-ct > button {
+    margin-right: 5px;
+}

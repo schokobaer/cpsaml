@@ -1,0 +1,12 @@
+<launch>
+  <arg name="roomba_id" />
+  <group ns="roomba1">
+    <node pkg="roomba" name="wheels" ns="wheels" type="wheels.py" />
+    <node pkg="roomba" name="speaker" ns="speaker" type="speaker.py" />
+    <node pkg="roomba" name="navigator" ns="navigator" type="navigator.py" />
+    <node pkg="roomba" name="battery" ns="battery" type="battery.py" />
+    <node pkg="roomba" name="bumper" ns="bumper" type="bumper.py" />
+    <node pkg="roomba" name="roomba_dt" type="roomba_dt.py" args="$(arg roomba_id)" output="screen" />
+  </group>
+
+</launch>
